@@ -1,0 +1,51 @@
+Terraform Setup
+1. Authenticate your computer and Terraform file to AWS
+2. You need an authentication file. Make one in correct directory
+	- On your computer create folder in Documents > Terraform
+	- In Terraform Create folder Terraform > 2025oct14
+	- Enter these codes in git bash
+	- $: cd ./Documents/terraform/2025oct14 = This will take you to the correct directory
+	- $: ls = To check that you are in the right directory. Directory should be empty
+	- $: touch 0-auth.th = this will make a file in the Directory called "0-auth.th"
+3. Now that you have "0-auth.th" in the correct directory open Visual Studio Code
+	- Enter code in git bash.
+	- $: code .
+	- This will open Visual Studio Code
+	- Make sure you are running terminal in [bash] not powershell.
+	- Make bash your default.
+4. Navigate to Theos Git hub https://github.com/chewbaccawaf/class7/fork
+	- Fork class7 repo to your git hub
+	- In Theos repository, navigate to the file called 0-Auth.th and copy the code.
+	- Navigate back to Visual Studio Code and paste the code in the "0-auth.th" file.
+	- Save in Visual Studio Code
+	- You can check it saved by going to git bash and entering this code
+	- $: cat 0-auth.th = you should see the code you copied in to VS code.
+		- Side Quest: copy Theos Class7 Repo in your computer through git bash.
+		- $: git clone https://github.com/chewbaccawaf/class7.git
+		- To verify file imported repo Check Visual Studio Code and Class7 folder should appear
+		- You will use these files in the future.
+5. In VS code; at the top; click on terminal > new terminal
+	- The new terminal should have opened in the current directory you have been working in.
+	- Check to see if you have terraform installed with command
+	- $: terraform --version      Then,
+	- $: terraform init = To Start Terraform
+	- A new should have appeared in your Directory: .terraform.lock.hcl
+	- Do not touch this file!!!!!!!!!!!!
+6. Copy Aarons git Ignore file into your Directory through VS code.
+	- $: curl -O https://raw.githubusercontent.com/jdoomsday333/Class7-notes/refs/heads/main/101425/.gitignore
+	- Do not touch this file!!!!!!!!!!!!!!!!!!
+	- $: ls -al = to make sure all the files you need are in the 2025oct14 folder
+	- ![[filesindir.png]]
+		- Files that should be in the folder
+			- .
+			- ..
+			- .DS_Store
+			- .gitignore = This is the ignore file [Do NOT touch!!!!!!!]
+			- .terraform = This is the Terraform program running
+			- .terraform.lock.hcl = This is the Terraform file [Do NOT Touch!!!!]
+			- 0-auth.tf = This is the terraform file you need to run: $: terraform init
+			- class7 = These are the Resources for the Terraform Class from Repo
+7. $: terraform validate = Should have a Success message
+	-  $: terraform plan = If you did not get a "terraform.tfstate" file Run;
+	- $: terraform apply = This should have created "terraform.tfstate" file
+		- Do not touch "terraform.tfstate" file!!!!!!!!
